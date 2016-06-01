@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="slave-shavadoop:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/slave_shavadoop_jar</output-path>
+    <root id="archive" name="slave-shavadoop.jar">
+      <element id="module-output" name="slave-shavadoop" />
+    </root>
+  </artifact>
+</component>
