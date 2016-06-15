@@ -1,12 +1,15 @@
 import java.io.IOException;
 
-public abstract class MapTask {
-    protected String data = "";
-    protected String mapResult = "";
+/**
+ * Created by arnaud on 15/06/2016.
+ */
+public abstract class ReduceTask {
+    protected String[] data;
+    protected String reduceResult = "";
     protected String filename = "";
 
-    public MapTask() {}
-    public MapTask(String filename) {
+    public ReduceTask() {}
+    public ReduceTask(String filename) {
         try {
             readFile(filename);
         } catch (IOException e) {
@@ -15,14 +18,14 @@ public abstract class MapTask {
     }
     public void readFile(String filename) throws IOException {
         this.filename = filename;
-        data = Files.getLines(filename)[0];
+        data = Files.getLines(filename);
     }
     public void save(String filename) throws IOException {
-        Files.saveString(filename, mapResult);
+        Files.saveString(filename, reduceResult);
     }
     public void save() throws IOException {
-        save(filename+"map");
+        save(filename+"reduced");
     }
 
-    public abstract void map();
+    public abstract void reduce();
 }

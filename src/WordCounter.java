@@ -1,11 +1,11 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class WordCounter extends MapTask{
+public class WordCounter extends MapTask {
     public WordCounter(String filename) {
         super(filename);
     }
-    public void run() {
+    public void map() {
         String[] words = data.split(" ");
         Set<String> set = new HashSet<String>();
         mapResult = "";
